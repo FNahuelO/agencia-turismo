@@ -5,7 +5,7 @@ export const dynamic = "force-dynamic";
 /** Índice público de la API (sin autenticación). */
 export function GET() {
   return apiJson({
-    name: "TravelAr API",
+    name: "API de reservas",
     version: "v1",
     auth: "Authorization: Bearer <API key>",
     endpoints: [

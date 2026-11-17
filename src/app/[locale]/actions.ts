@@ -65,7 +65,9 @@ export async function createLead(_prev: LeadFormState, formData: FormData): Prom
   });
 
   const settings = await getSettings();
-  const intro = title ? packageWhatsappMessage(t.wa, { title, date, passengers: data.passengers }) : t.wa.hero;
+  const intro = title
+    ? packageWhatsappMessage(t.wa, { brand: settings.brandName, title, date, passengers: data.passengers })
+    : interpolate(t.wa.hero, { brand: settings.brandName });
   const text = `${intro} ${interpolate(t.wa.leadDone, { name: data.name })}`;
   return { status: "ok", whatsappUrl: whatsappLink(settings.whatsapp, text) };
 }

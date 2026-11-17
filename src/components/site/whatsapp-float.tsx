@@ -1,13 +1,13 @@
-import { whatsappLink } from "@/lib/whatsapp";
+import { brandWhatsappMessage, whatsappLink } from "@/lib/whatsapp";
 import type { Locale } from "@/lib/i18n/config";
 import { getDictionary } from "@/lib/i18n/dictionaries";
 import { WhatsAppIcon } from "./icons";
 
-export function WhatsAppFloat({ number, locale }: { number: string; locale: Locale }) {
+export function WhatsAppFloat({ number, brand, locale }: { number: string; brand: string; locale: Locale }) {
   const t = getDictionary(locale);
   return (
     <a
-      href={whatsappLink(number, t.wa.general)}
+      href={whatsappLink(number, brandWhatsappMessage(t.wa.general, brand))}
       target="_blank"
       rel="noopener"
       aria-label={t.nav.whatsapp}

@@ -1,6 +1,6 @@
-# TravelAr Turismo · Sitio + Backoffice
+# Agencia de Turismo · Sitio + Backoffice
 
-Sitio público y panel de gestión para [travelarturismo.com.ar](https://travelarturismo.com.ar), en Next.js 16 (App Router), React 19, Tailwind 4, Drizzle ORM y Postgres (Docker en local / Neon en producción). Archivos subidos en Cloudinary.
+Sitio público y panel de gestión white-label para una OTA (Next.js 16, React 19, Tailwind 4, Drizzle ORM, Postgres/Neon, Cloudinary). La marca, contactos y textos de la home se configuran desde el backoffice.
 
 ## Puesta en marcha
 

@@ -30,7 +30,7 @@ type Props = { user: { name: string; role: string }; newLeads: number; bookingAl
 function Logo() {
   return (
     <Link href="/admin" className="font-display text-xl font-bold text-white">
-      TravelAr <span className="text-sun">admin</span>
+      Backoffice
     </Link>
   );
 }

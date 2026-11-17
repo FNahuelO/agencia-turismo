@@ -1,6 +1,6 @@
 import { jwtVerify, SignJWT } from "jose";
 
-export const SESSION_COOKIE = "travelar_session";
+export const SESSION_COOKIE = "agencia_session";
 export const SESSION_MAX_AGE = 60 * 60 * 24 * 7;
 
 export type SessionPayload = { sub: string; name: string; email: string; role: "admin" | "editor" };

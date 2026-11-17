@@ -392,7 +392,7 @@ async function main() {
   await db.insert(schema.reviews).values([
     { author: "Reseña de ejemplo · Marta G.", rating: 5, trip: "Puerto Madryn", text: "Reemplazar por una reseña real de Google. Ejemplo: excelente coordinación, el hotel impecable y todo el grupo muy bien atendido." },
     { author: "Reseña de ejemplo · Jorge P.", rating: 5, trip: "Cataratas del Iguazú", text: "Reemplazar por una reseña real de Google. Ejemplo: viajamos en familia y nos resolvieron todo, súper recomendables." },
-    { author: "Reseña de ejemplo · Silvia R.", rating: 5, trip: "Villa de Merlo", text: "Reemplazar por una reseña real de Google. Ejemplo: tercera vez que viajo con TravelAr, precio justo y mucha atención." },
+    { author: "Reseña de ejemplo · Silvia R.", rating: 5, trip: "Villa de Merlo", text: "Reemplazar por una reseña real de Google. Ejemplo: tercera vez que viajo con la agencia, precio justo y mucha atención." },
   ]);
 
   const anyPackages = await db.select({ id: schema.packages.id }).from(schema.packages).limit(4);
@@ -403,7 +403,7 @@ async function main() {
     { name: "Grupo jubilados Castelar", phone: "11 5555-0104", passengers: 12, packageId: anyPackages[3]?.id, status: "reservado", notes: "Seña recibida por transferencia." },
   ]);
 
-  const adminEmail = process.env.ADMIN_EMAIL ?? "admin@travelarturismo.com.ar";
+  const adminEmail = process.env.ADMIN_EMAIL ?? "admin@ejemplo.com";
   const adminPassword = process.env.ADMIN_PASSWORD;
   if (adminPassword) {
     const passwordHash = await bcrypt.hash(adminPassword, 10);

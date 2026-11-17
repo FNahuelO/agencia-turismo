@@ -59,6 +59,7 @@ export default async function PackagePage({ params }: PageProps<"/[locale]/paque
   const waUrl = whatsappLink(
     settings.whatsapp,
     packageWhatsappMessage(t.wa, {
+      brand: settings.brandName,
       title: `${pkg.title} (${formatDuration(pkg.days, pkg.nights, t.common)})`,
       date: nextDep ? formatShortDate(nextDep.date, locale) : undefined,
     }),

@@ -48,7 +48,7 @@ export default async function EmailsPage({ searchParams }: PageProps<"/admin/ema
             <div className="flex justify-between gap-3"><dt className="text-ink-soft">Avisos internos</dt><dd className="text-right">{settings.emailAdminAlerts === "1" ? settings.notifyEmail || settings.email : "Desactivados"}</dd></div>
           </dl>
           <p className="mt-4 text-xs text-ink-soft">
-            Variables de entorno: <code>RESEND_API_KEY</code> y <code>EMAIL_FROM</code> (por ejemplo <code>TravelAr Turismo &lt;reservas@tudominio.com&gt;</code>, con el dominio verificado en Resend). Sin dominio verificado, Resend solo entrega a la casilla de tu cuenta. Los interruptores están en <Link href="/admin/configuracion" className="text-lake hover:underline">Configuración</Link>.
+            Variables de entorno: <code>RESEND_API_KEY</code> y <code>EMAIL_FROM</code> (por ejemplo <code>Agencia de Turismo &lt;reservas@tudominio.com&gt;</code>, con el dominio verificado en Resend). Sin dominio verificado, Resend solo entrega a la casilla de tu cuenta. Los interruptores están en <Link href="/admin/configuracion" className="text-lake hover:underline">Configuración</Link>.
           </p>
         </Card>
         <Card title="Qué se manda">

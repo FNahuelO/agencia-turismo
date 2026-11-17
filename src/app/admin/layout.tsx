@@ -2,7 +2,7 @@ import type { Metadata } from "next";
 import { FormValidation } from "@/components/admin/form-validation";
 
 export const metadata: Metadata = {
-  title: { default: "Backoffice", template: "%s · Backoffice TravelAr" },
+  title: { default: "Backoffice", template: "%s · Backoffice" },
   robots: { index: false, follow: false },
 };
 

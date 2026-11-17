@@ -13,7 +13,7 @@ export default async function LoginPage({ searchParams }: PageProps<"/admin/logi
   return (
     <div className="flex min-h-dvh items-center justify-center bg-ink px-5">
       <div className="w-full max-w-sm rounded-3xl bg-white p-8 shadow-2xl">
-        <Image src="/logo.webp" alt="TravelAr Turismo" width={139} height={48} className="mx-auto h-12 w-auto" priority />
+        <Image src="/logo.webp" alt="Logo" width={139} height={48} className="mx-auto h-12 w-auto" priority />
         <h1 className="mt-6 text-center font-display text-2xl font-bold">Backoffice</h1>
         <p className="mt-1 text-center text-sm text-ink-soft">Ingresá con tu cuenta del equipo</p>
         <ActionForm action={login} className="mt-8 space-y-4">

@@ -52,7 +52,10 @@ export default async function ProductPage({ params }: PageProps<"/[locale]/produ
   const kind = pkg.kind;
   const Icon = KIND_ICON[kind];
   const canBook = settings.onlineBooking === "1";
-  const waUrl = whatsappLink(settings.whatsapp, packageWhatsappMessage(t.wa, { title: `${pkg.title} (${pkg.destination.name})` }));
+  const waUrl = whatsappLink(
+    settings.whatsapp,
+    packageWhatsappMessage(t.wa, { brand: settings.brandName, title: `${pkg.title} (${pkg.destination.name})` }),
+  );
 
   return (
     <>

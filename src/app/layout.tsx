@@ -21,15 +21,15 @@ const siteUrl = process.env.NEXT_PUBLIC_SITE_URL ?? "http://localhost:3000";
 export const metadata: Metadata = {
   metadataBase: new URL(siteUrl),
   title: {
-    default: "TravelAr Turismo · Viajes por Argentina en bus y aéreos",
-    template: "%s · TravelAr Turismo",
+    default: "Agencia de Turismo · Viajes por Argentina en bus y aéreos",
+    template: "%s · Agencia de Turismo",
   },
   description:
-    "Agencia de viajes en Ituzaingó con más de 15 años de trayectoria. Paquetes por Argentina en bus y aéreos con coordinación permanente y tarifa accesible. Legajo EVT 18309.",
+    "Agencia de viajes con paquetes por Argentina en bus y aéreos, coordinación en cada salida y precios claros.",
   openGraph: {
     type: "website",
     locale: "es_AR",
-    siteName: "TravelAr Turismo",
+    siteName: "Agencia de Turismo",
     images: ["/media/hero.webp"],
   },
 };

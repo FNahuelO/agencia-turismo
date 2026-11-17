@@ -8,7 +8,7 @@ import { slugify } from "./format";
 type Folder = "uploads" | "receipts";
 
 const MAX_BYTES = 10 * 1024 * 1024;
-const CLOUD_FOLDER = "travelar";
+const CLOUD_FOLDER = "agencia";
 
 /** Con `CLOUDINARY_URL` (producción) se sube a Cloudinary; sin ella, al disco en `data/`. */
 const useCloudinary = () => Boolean(process.env.CLOUDINARY_URL);

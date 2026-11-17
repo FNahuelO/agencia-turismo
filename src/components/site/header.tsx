@@ -4,7 +4,7 @@ import { Menu, Phone } from "lucide-react";
 import type { ProductKind } from "@/db/schema";
 import { DAILY_KINDS, KIND_PATH } from "@/lib/products";
 import type { SiteSettings } from "@/lib/settings";
-import { whatsappLink } from "@/lib/whatsapp";
+import { brandWhatsappMessage, whatsappLink } from "@/lib/whatsapp";
 import { localePath, type Locale } from "@/lib/i18n/config";
 import { getDictionary } from "@/lib/i18n/dictionaries";
 import { CurrencySwitcher } from "./currency";
@@ -20,12 +20,12 @@ export function Header({ settings, locale, productKinds = [] }: { settings: Site
     { href: localePath(locale, "/nosotros"), label: t.nav.nosotros },
     { href: localePath(locale, "/contacto"), label: t.nav.contacto },
   ];
-  const wa = whatsappLink(settings.whatsapp, t.wa.general);
+  const wa = whatsappLink(settings.whatsapp, brandWhatsappMessage(t.wa.general, settings.brandName));
   return (
     <header className="sticky top-0 z-40 border-b border-ink/10 bg-white">
       <div className="container-x flex h-16 items-center justify-between gap-4">
-        <Link href={localePath(locale, "/")} className="shrink-0" aria-label={`TravelAr Turismo, ${t.nav.home}`}>
-          <Image src="/logo.webp" alt="TravelAr Turismo" width={139} height={48} priority className="h-10 w-auto" />
+        <Link href={localePath(locale, "/")} className="shrink-0" aria-label={`${settings.brandName}, ${t.nav.home}`}>
+          <Image src="/logo.webp" alt={settings.brandName} width={139} height={48} priority className="h-10 w-auto" />
         </Link>
 
         <nav aria-label="Principal" className="hidden items-center gap-5 md:flex xl:gap-7">

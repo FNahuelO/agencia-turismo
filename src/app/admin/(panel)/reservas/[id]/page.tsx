@@ -64,7 +64,7 @@ export default async function ReservaAdminPage({ params }: PageProps<"/admin/res
   const due = amountDue(booking);
   const fmt = (n: number) => formatPrice(n, booking.currency);
   const phone = booking.contactPhone.replace(/\D/g, "");
-  const wa = whatsappLink(phone.startsWith("54") ? phone : `549${phone}`, `Hola ${booking.contactName.split(" ")[0]}! Te escribo de TravelAr Turismo por tu reserva ${booking.code}.`);
+  const wa = whatsappLink(phone.startsWith("54") ? phone : `549${phone}`, `Hola ${booking.contactName.split(" ")[0]}! Te escribo por tu reserva ${booking.code}.`);
   const publicUrl = `${process.env.NEXT_PUBLIC_SITE_URL ?? ""}${bookingUrl(booking)}`;
   const openAlerts = booking.events.filter((e) => e.level === "alerta" && !e.resolved);
 

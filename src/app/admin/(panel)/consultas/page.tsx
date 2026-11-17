@@ -93,7 +93,7 @@ export default async function ConsultasPage({ searchParams }: PageProps<"/admin/
         <ul className="space-y-3">
           {rows.map((l) => {
             const trip = l.package ? `${l.package.title}${l.departure ? ` del ${formatShortDate(l.departure.date)}` : ""}` : "tu viaje";
-            const reply = whatsappLink(l.phone.startsWith("+") || l.phone.startsWith("54") ? l.phone : `549${l.phone}`, `Hola ${l.name.split(" ")[0]}! Te escribo de TravelAr Turismo por tu consulta sobre ${trip}.`);
+            const reply = whatsappLink(l.phone.startsWith("+") || l.phone.startsWith("54") ? l.phone : `549${l.phone}`, `Hola ${l.name.split(" ")[0]}! Te escribo por tu consulta sobre ${trip}.`);
             return (
               <li key={l.id} className="rounded-2xl bg-white p-5 ring-1 ring-ink/5">
                 <div className="flex flex-wrap items-start justify-between gap-4">

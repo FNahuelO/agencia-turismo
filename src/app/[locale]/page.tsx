@@ -8,7 +8,7 @@ import { TrustBar } from "@/components/site/trust-bar";
 import { availabilityLabel, formatShortDate } from "@/lib/format";
 import { getDestinationCards, getPackageCards, getPublishedReviews, getUpcomingDepartures } from "@/lib/queries";
 import { getSettings, localizedSetting } from "@/lib/settings";
-import { whatsappLink } from "@/lib/whatsapp";
+import { brandWhatsappMessage, whatsappLink } from "@/lib/whatsapp";
 import { asLocale, INTL_LOCALE, interpolate, localePath } from "@/lib/i18n/config";
 import { getDictionary } from "@/lib/i18n/dictionaries";
 
@@ -45,7 +45,7 @@ export default async function HomePage({ params }: PageProps<"/[locale]">) {
                 {t.common.seeDepartures} <ArrowRight className="size-4" />
               </Link>
               <a
-                href={whatsappLink(settings.whatsapp, t.wa.hero)}
+                href={whatsappLink(settings.whatsapp, brandWhatsappMessage(t.wa.hero, settings.brandName))}
                 target="_blank"
                 rel="noopener"
                 className="inline-flex items-center gap-2 text-sm font-semibold text-white underline decoration-white/30 underline-offset-4 transition-colors duration-150 hover:decoration-white"
@@ -251,7 +251,7 @@ export default async function HomePage({ params }: PageProps<"/[locale]">) {
             <h2 className="font-display text-3xl font-bold sm:text-4xl">{t.home.ctaTitle}</h2>
             <p className="mt-2 max-w-lg text-ink/80">{t.home.ctaText}</p>
           </div>
-          <a href={whatsappLink(settings.whatsapp, t.wa.recommend)} target="_blank" rel="noopener" className="btn-dark px-6 py-3.5 text-base" data-event="whatsapp_click" data-location="cta_final">
+          <a href={whatsappLink(settings.whatsapp, brandWhatsappMessage(t.wa.recommend, settings.brandName))} target="_blank" rel="noopener" className="btn-dark px-6 py-3.5 text-base" data-event="whatsapp_click" data-location="cta_final">
             <WhatsAppIcon className="size-4" /> {t.home.ctaButton}
           </a>
         </div>

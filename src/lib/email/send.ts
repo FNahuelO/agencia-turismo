@@ -22,7 +22,7 @@ export function emailConfigured() {
 }
 
 export function emailFrom() {
-  return process.env.EMAIL_FROM || "TravelAr Turismo <onboarding@resend.dev>";
+  return process.env.EMAIL_FROM || "Agencia de Turismo <onboarding@resend.dev>";
 }
 
 async function postToResend(email: { to: string; subject: string; html: string; text: string; replyTo?: string }) {

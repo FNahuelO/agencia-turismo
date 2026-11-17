@@ -3,7 +3,7 @@ import { Clock, Mail, MapPin, Phone } from "lucide-react";
 import { WhatsAppIcon } from "@/components/site/icons";
 import { LeadForm } from "@/components/site/lead-form";
 import { getSettings, localizedSetting } from "@/lib/settings";
-import { whatsappLink } from "@/lib/whatsapp";
+import { brandWhatsappMessage, whatsappLink } from "@/lib/whatsapp";
 import { asLocale, localeAlternates } from "@/lib/i18n/config";
 import { getDictionary } from "@/lib/i18n/dictionaries";
 
@@ -46,7 +46,7 @@ export default async function ContactoPage({ params }: PageProps<"/[locale]/cont
               <li><a href={`tel:${settings.phone.replace(/\s/g, "")}`} className="flex gap-3 hover:text-lake"><Phone className="mt-0.5 size-5 shrink-0 text-lake" />{settings.phone}</a></li>
               <li><a href={`mailto:${settings.email}`} className="flex gap-3 hover:text-lake"><Mail className="mt-0.5 size-5 shrink-0 text-lake" />{settings.email}</a></li>
             </ul>
-            <a href={whatsappLink(settings.whatsapp, t.wa.general)} target="_blank" rel="noopener" className="btn-whatsapp mt-6" data-event="whatsapp_click" data-location="contacto">
+            <a href={whatsappLink(settings.whatsapp, brandWhatsappMessage(t.wa.general, settings.brandName))} target="_blank" rel="noopener" className="btn-whatsapp mt-6" data-event="whatsapp_click" data-location="contacto">
               <WhatsAppIcon className="size-4" /> {t.nav.whatsapp}
             </a>
           </div>

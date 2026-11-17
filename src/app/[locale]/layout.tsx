@@ -21,12 +21,12 @@ export function generateStaticParams() {
 export async function generateMetadata({ params }: LayoutProps<"/[locale]">): Promise<Metadata> {
   const { locale } = await params;
   if (!isLocale(locale)) return {};
-  const t = getDictionary(locale);
+  const [t, settings] = [getDictionary(locale), await getSettings()];
   return {
-    title: { default: t.meta.title, template: "%s · TravelAr Turismo" },
+    title: { default: `${settings.brandName} · ${t.meta.title}`, template: `%s · ${settings.brandName}` },
     description: t.meta.description,
     alternates: localeAlternates(locale, "/"),
-    openGraph: { type: "website", locale: OG_LOCALE[locale], siteName: "TravelAr Turismo", images: ["/media/hero.webp"] },
+    openGraph: { type: "website", locale: OG_LOCALE[locale], siteName: settings.brandName, images: ["/media/hero.webp"] },
   };
 }
 
@@ -44,7 +44,7 @@ export default async function SiteLayout({ children, params }: LayoutProps<"/[lo
         <Header settings={settings} locale={locale} productKinds={kinds} />
         <main>{children}</main>
         <Footer settings={settings} locale={locale} />
-        <WhatsAppFloat number={settings.whatsapp} locale={locale} />
+        <WhatsAppFloat number={settings.whatsapp} brand={settings.brandName} locale={locale} />
         <Analytics />
       </CurrencyProvider>
     </I18nProvider>

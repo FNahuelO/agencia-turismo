@@ -3,7 +3,7 @@ import { WhatsAppIcon } from "@/components/site/icons";
 import { ProductCard } from "@/components/site/product-card";
 import { getProductCards, KIND_PATH, type DailyKind } from "@/lib/products";
 import { getSettings } from "@/lib/settings";
-import { whatsappLink } from "@/lib/whatsapp";
+import { brandWhatsappMessage, whatsappLink } from "@/lib/whatsapp";
 import { localeAlternates, type Locale } from "@/lib/i18n/config";
 import { getDictionary } from "@/lib/i18n/dictionaries";
 
@@ -27,7 +27,7 @@ export async function ProductListing({ kind, locale }: { kind: DailyKind; locale
       ) : (
         <div className="mt-10 rounded-xl bg-sand p-8 text-ink-soft">
           <p>{t.products.empty}</p>
-          <a href={whatsappLink(settings.whatsapp, t.wa.general)} target="_blank" rel="noopener" className="btn-whatsapp mt-4">
+          <a href={whatsappLink(settings.whatsapp, brandWhatsappMessage(t.wa.general, settings.brandName))} target="_blank" rel="noopener" className="btn-whatsapp mt-4">
             <WhatsAppIcon className="size-4" /> {t.common.whatsappCta}
           </a>
         </div>
